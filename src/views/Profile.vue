@@ -86,38 +86,42 @@
 
         <section class="section bg-secondary mb-5">
           <div class="container container-lg">
-            <tabs fill class="flex-column flex-md-row">
+            <div class="row align-items-center justify-content-center">
+              <h2 class="text-dark">Competenze</h2>
+            </div>
+            <tabs fill class="flex-column flex-md-row mt-4">
               <card shadow>
-                  <tab-pane>
-                      <span slot="title">
-                          <i class="ni ni-cloud-upload-96"></i>
-                          Home
-                      </span>
-                      <p class="description">Raw denim you probably haven't heard of them jean shorts
-                          Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
-                          cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-                          keffiyeh dreamcatcher synth.</p>
+                  <tab-pane title="Frontend">
+                    <span slot="title">
+                        <i class="fa fa-television" aria-hidden="true"></i>
+                        Frontend
+                    </span>
+                    <base-progress type="success" :value="100" label="HTML5" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="98" label="CSS3" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="95" label="Javascript" striped="true" animated="true"></base-progress>
                   </tab-pane>
 
-                  <tab-pane title="Profile">
-                      <span slot="title">
-                          <i class="ni ni-bell-55 mr-2"></i>
-                          Profile
-                      </span>
-                      <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex
-                          squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
-                          american apparel, butcher voluptate nisi qui.</p>
+                  <tab-pane title="Backend">
+                    <span slot="title">
+                        <i class="fa fa-terminal" aria-hidden="true"></i>
+                        Backend
+                    </span>
+                    <base-progress type="success" :value="80" label="PHP" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="85" label="MySQL" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="90" label="MongoDB" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="88" label="Node.js" striped="true" animated="true"></base-progress>
                   </tab-pane>
 
-                  <tab-pane>
-                       <span slot="title">
-                          <i class="ni ni-calendar-grid-58"></i>
-                          Messages
-                        </span>
-                      <p class="description">Raw denim you probably haven't heard of them jean shorts
-                          Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
-                          cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-                          keffiyeh dreamcatcher synth.</p>
+                  <tab-pane title="Frameworks e Librerie">
+                    <span slot="title">
+                        <i class="fa fa-cubes" aria-hidden="true"></i>
+                        Frameworks e Librerie
+                    </span>
+                    <base-progress type="success" :value="88" label="Laravel" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="90" label="Vue.js" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="99" label="JQuery" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="85" label="Bootstrap" striped="true" animated="true"></base-progress>
+                    <base-progress type="success" :value="70" label="Wordpress" striped="true" animated="true"></base-progress>
                   </tab-pane>
               </card>
           </tabs>
@@ -172,37 +176,55 @@
                       </div>
                   </div>
               </div>
+          </div>
+        </section>
 
-              <!-- <div class="row">
-                  <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
-                      <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/landing" title="Landing Page">
-                              <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                          </router-link>
-                      </div>
+        <section class="section section-lg section-shaped overflow-hidden my-0">
+          <div class="container container-lg">
+            <div class="row align-items-center justify-content-center pb-3">
+              <h2 class="text-dark">Esperienze</h2>
+            </div>
+            <div class="row">
+              <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
+                <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
+                  <div class="card card-lift--hover shadow border-0 slide-in from-left">
+                      <router-link to="/landing" title="Landing Page">
+                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                      </router-link>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
-                      <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/profile" title="Profile Page">
-                              <img v-lazy="'img/theme/profile.jpg'" class="card-img">
-                          </router-link>
-                      </div>
+                </div>
+              <!-- </div> -->
+              <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
+                <div class="transform-perspective-right col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
+                  <div class="card card-lift--hover shadow border-0 slide-in from-right">
+                      <router-link to="/landing" title="Landing Page">
+                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                      </router-link>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
-                      <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/landing" title="Landing Page">
-                              <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                          </router-link>
-                      </div>
+                </div>
+              <!-- </div> -->
+            </div>
+
+            <div class="row">
+              <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
+                <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
+                  <div class="card card-lift--hover shadow border-0 slide-in from-left">
+                      <router-link to="/landing" title="Landing Page">
+                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                      </router-link>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
-                      <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/profile" title="Profile Page">
-                              <img v-lazy="'img/theme/profile.jpg'" class="card-img">
-                          </router-link>
-                      </div>
+                </div>
+              <!-- </div> -->
+              <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
+                <div class="transform-perspective-right col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
+                  <div class="card card-lift--hover shadow border-0 slide-in from-right">
+                      <router-link to="/landing" title="Landing Page">
+                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                      </router-link>
                   </div>
-              </div> -->
+                </div>
+              <!-- </div> -->
+            </div>
           </div>
         </section>
 
@@ -211,7 +233,7 @@
     </div>
 </template>
 
-<script>
+<script scoped>
 import Tabs from "@/components/Tabs/Tabs.vue";
 import TabPane from "@/components/Tabs/TabPane.vue";
 import { VBTooltip } from "bootstrap-vue/esm/directives/tooltip/tooltip";
@@ -225,8 +247,87 @@ export default {
     'tabs': Tabs,
     'tab-pane': TabPane,
   },
+  mounted () {
+    // faders effect
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOptions = {
+      threshold: 0,
+      rootMargin: "0px 0px -250px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries,
+      appearOnScroll
+    ) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add("appear");
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    },
+    appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // skide in effect
+    const sliders = document.querySelectorAll(".slide-in");
+
+    sliders.forEach(slider => {
+      appearOnScroll.observe(slider);
+    });
+  }
 };
 </script>
 
-<style>
+<style lang="scss">
+
+// fade in
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+  &.appear {
+    opacity: 1;
+  }
+}
+
+// slide in
+.from-left {
+  // grid-column: 2 / 3;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.from-right {
+  // grid-column: 3 / 4;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right {
+  transition: opacity 250ms ease-in, -webkit-transform 400ms ease-in;
+  transition: opacity 250ms ease-in, transform 400ms ease-in;
+  transition: opacity 250ms ease-in, transform 400ms ease-in,
+    -webkit-transform 400ms ease-in;
+  opacity: 0;
+  &.appear {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// .from-left.appear,
+// .from-right.appear {
+//   -webkit-transform: translateX(0);
+//   transform: translateX(0);
+//   opacity: 1;
+// }
+
 </style>
