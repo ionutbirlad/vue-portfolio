@@ -162,13 +162,13 @@
             </modal>
 
               <div class="row">
-                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            title="Progetto ispirato a Netflix">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="'img/projects_cover/boolflix.png'" class="card-img">
                       </div>
                   </div>
-                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-right" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            title="Progetto ispirato a Spotify">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="'img/projects_cover/spotify.png'" class="card-img">
@@ -176,19 +176,19 @@
                   </div>
               </div>
               <div class="row">
-                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
            title="Progetto ispirato ad AirBnB">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="'img/projects_cover/airbnb.png'" class="card-img">
                       </div>
                   </div>
-                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
            title="Progetto ispirato a WhatsApp Web">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="'img/projects_cover/boolsapp.png'" class="card-img">
                       </div>
                   </div>
-                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            title="Progetto ispirato a Teambit">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="'img/projects_cover/teambit.png'" class="card-img">
