@@ -139,28 +139,32 @@
               <h2 class="text-white">Progetti principali</h2>
             </div>
               <div class="row">
-                  <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
+           title="Popover On top">
                       <div class="card card-lift--hover shadow border-0">
                           <router-link to="/landing" title="Landing Page">
                               <img v-lazy="'img/theme/landing.jpg'" class="card-img">
                           </router-link>
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topleft="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
+           title="Popover On top">
                       <div class="card card-lift--hover shadow border-0">
                           <router-link to="/profile" title="Profile Page">
                               <img v-lazy="'img/theme/profile.jpg'" class="card-img">
                           </router-link>
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topright="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
+           title="Popover On top">
                       <div class="card card-lift--hover shadow border-0">
                           <router-link to="/landing" title="Landing Page">
                               <img v-lazy="'img/theme/landing.jpg'" class="card-img">
                           </router-link>
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
+           title="Popover On top">
                       <div class="card card-lift--hover shadow border-0">
                           <router-link to="/profile" title="Profile Page">
                               <img v-lazy="'img/theme/profile.jpg'" class="card-img">
@@ -169,7 +173,7 @@
                   </div>
               </div>
 
-              <div class="row">
+              <!-- <div class="row">
                   <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
                       <div class="card card-lift--hover shadow border-0">
                           <router-link to="/landing" title="Landing Page">
@@ -198,7 +202,7 @@
                           </router-link>
                       </div>
                   </div>
-              </div>
+              </div> -->
           </div>
         </section>
 
@@ -210,10 +214,16 @@
 <script>
 import Tabs from "@/components/Tabs/Tabs.vue";
 import TabPane from "@/components/Tabs/TabPane.vue";
+import { VBTooltip } from "bootstrap-vue/esm/directives/tooltip/tooltip";
+import { VBPopover } from "bootstrap-vue/esm/directives/popover/popover";
 export default {
+  directives: {
+    BTooltip: VBTooltip,
+    BPopover: VBPopover,
+  },
   components: {
     'tabs': Tabs,
-    'tab-pane': TabPane
+    'tab-pane': TabPane,
   },
 };
 </script>
