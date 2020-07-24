@@ -1,0 +1,77 @@
+<div class="shape shape-style-1 shape-dark shape-skew alpha-4">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+<div class="container container-lg">
+  <div class="row align-items-center justify-content-center">
+    <h2>Progetti principali</h2>
+  </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/landing" title="Landing Page">
+                    <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/profile" title="Profile Page">
+                    <img v-lazy="'img/theme/profile.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/landing" title="Landing Page">
+                    <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mt-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/profile" title="Profile Page">
+                    <img v-lazy="'img/theme/profile.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/landing" title="Landing Page">
+                    <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/profile" title="Profile Page">
+                    <img v-lazy="'img/theme/profile.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/landing" title="Landing Page">
+                    <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-5">
+            <div class="card card-lift--hover shadow border-0">
+                <router-link to="/profile" title="Profile Page">
+                    <img v-lazy="'img/theme/profile.jpg'" class="card-img">
+                </router-link>
+            </div>
+        </div>
+    </div>
+</div>
