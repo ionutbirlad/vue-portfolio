@@ -142,47 +142,66 @@
             <div class="row align-items-center justify-content-center">
               <h2 class="text-white">Progetti principali</h2>
             </div>
+
+            <!-- modal progetti -->
+            <modal :show.sync="modal">
+              <h6 slot="header" class="modal-title" id="modal-title-default">Type your modal title</h6>
+
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                  Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                  right at the coast of the Semantics, a large language ocean.</p>
+              <p>A small river named Duden flows by their place and supplies it with the necessary
+                  regelialia. It is a paradisematic country, in which roasted parts of sentences
+                  fly into your mouth.</p>
+
+              <template slot="footer">
+                  <base-button type="primary">Maggiori dettagli</base-button>
+                  <base-button type="link" class="ml-auto" @click="modal = false">Chiudi
+                  </base-button>
+              </template>
+            </modal>
+
               <div class="row">
-                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
-           title="Popover On top">
+                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+           title="Progetto ispirato a Netflix">
                       <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/landing" title="Landing Page">
-                              <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                          </router-link>
+                        <img v-lazy="'img/projects_cover/boolflix.png'" class="card-img">
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topleft="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
-           title="Popover On top">
+                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+           title="Progetto ispirato a Spotify">
                       <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/profile" title="Profile Page">
-                              <img v-lazy="'img/theme/profile.jpg'" class="card-img">
-                          </router-link>
+                        <img v-lazy="'img/projects_cover/spotify.png'" class="card-img">
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topright="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
-           title="Popover On top">
+              </div>
+              <div class="row">
+                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
+           title="Progetto ispirato ad AirBnB">
                       <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/landing" title="Landing Page">
-                              <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                          </router-link>
+                        <img v-lazy="'img/projects_cover/airbnb.png'" class="card-img">
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'"
-           title="Popover On top">
+                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
+           title="Progetto ispirato a WhatsApp Web">
                       <div class="card card-lift--hover shadow border-0">
-                          <router-link to="/profile" title="Profile Page">
-                              <img v-lazy="'img/theme/profile.jpg'" class="card-img">
-                          </router-link>
+                        <img v-lazy="'img/projects_cover/boolsapp.png'" class="card-img">
+                      </div>
+                  </div>
+                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+           title="Progetto ispirato a Teambit">
+                      <div class="card card-lift--hover shadow border-0">
+                        <img v-lazy="'img/projects_cover/teambit.png'" class="card-img">
                       </div>
                   </div>
               </div>
           </div>
         </section>
 
-        <section class="section section-lg section-shaped overflow-hidden my-0">
+        <section class="section section-lg section-shaped overflow-hidden my-0 pb-0">
           <div class="container container-lg">
             <div class="row align-items-center justify-content-center pb-3">
-              <h2 class="text-dark">Esperienze</h2>
+              <h2 class="text-dark">Formazione</h2>
             </div>
             <div class="row">
               <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
@@ -227,9 +246,6 @@
             </div>
           </div>
         </section>
-
-
-
     </div>
 </template>
 
@@ -238,6 +254,8 @@ import Tabs from "@/components/Tabs/Tabs.vue";
 import TabPane from "@/components/Tabs/TabPane.vue";
 import { VBTooltip } from "bootstrap-vue/esm/directives/tooltip/tooltip";
 import { VBPopover } from "bootstrap-vue/esm/directives/popover/popover";
+import Modal from "@/components/Modal.vue";
+
 export default {
   directives: {
     BTooltip: VBTooltip,
@@ -246,6 +264,12 @@ export default {
   components: {
     'tabs': Tabs,
     'tab-pane': TabPane,
+    Modal
+  },
+  data () {
+    return {
+      modal: false,
+    }
   },
   mounted () {
     // faders effect
@@ -285,7 +309,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 // fade in
 .fade-in {
@@ -323,11 +347,8 @@ export default {
   }
 }
 
-// .from-left.appear,
-// .from-right.appear {
-//   -webkit-transform: translateX(0);
-//   transform: translateX(0);
-//   opacity: 1;
-// }
+.card {
+  cursor: pointer;
+}
 
 </style>
