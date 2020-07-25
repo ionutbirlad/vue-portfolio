@@ -145,53 +145,48 @@
 
             <!-- modal progetti -->
             <modal :show.sync="modal">
-              <h6 slot="header" class="modal-title" id="modal-title-default">Type your modal title</h6>
+              <h6 slot="header" class="modal-title" id="modal-title-default"> {{openedProject.title}} <small class="text-muted"> {{openedProject.subtitle}} </small> </h6>
 
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                  Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                  right at the coast of the Semantics, a large language ocean.</p>
-              <p>A small river named Duden flows by their place and supplies it with the necessary
-                  regelialia. It is a paradisematic country, in which roasted parts of sentences
-                  fly into your mouth.</p>
+              {{openedProject.description}}
 
               <template slot="footer">
-                  <base-button type="primary">Maggiori dettagli</base-button>
+                  <!-- <base-button type="primary">Esplora altri progetti</base-button> -->
                   <base-button type="link" class="ml-auto" @click="modal = false">Chiudi
                   </base-button>
               </template>
             </modal>
 
               <div class="row">
-                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
-           title="Progetto ispirato a Netflix">
+                  <div @click="(modal = true) && (openedProject = projects.boolflix)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+           :title="projects.boolflix.subtitle">
                       <div class="card card-lift--hover shadow border-0">
-                        <img v-lazy="'img/projects_cover/boolflix.png'" class="card-img">
+                        <img v-lazy="projects.boolflix.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="modal = true" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-right" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
-           title="Progetto ispirato a Spotify">
+                  <div @click="(modal = true) && (openedProject = projects.spotify)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-right" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+           :title="projects.spotify.subtitle">
                       <div class="card card-lift--hover shadow border-0">
-                        <img v-lazy="'img/projects_cover/spotify.png'" class="card-img">
+                        <img v-lazy="projects.spotify.image" class="card-img">
                       </div>
                   </div>
               </div>
               <div class="row">
-                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
-           title="Progetto ispirato ad AirBnB">
+                  <div @click="(modal = true) && (openedProject = projects.airbnb)" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
+           :title="projects.airbnb.subtitle">
                       <div class="card card-lift--hover shadow border-0">
-                        <img v-lazy="'img/projects_cover/airbnb.png'" class="card-img">
+                        <img v-lazy="projects.airbnb.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
-           title="Progetto ispirato a WhatsApp Web">
+                  <div @click="(modal = true) && (openedProject = projects.whatsapp)" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
+           :title="projects.whatsapp.subtitle">
                       <div class="card card-lift--hover shadow border-0">
-                        <img v-lazy="'img/projects_cover/boolsapp.png'" class="card-img">
+                        <img v-lazy="projects.whatsapp.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="modal = true" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
-           title="Progetto ispirato a Teambit">
+                  <div @click="(modal = true) && (openedProject = projects.teambit)" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+           :title="projects.teambit.subtitle">
                       <div class="card card-lift--hover shadow border-0">
-                        <img v-lazy="'img/projects_cover/teambit.png'" class="card-img">
+                        <img v-lazy="projects.teambit.image" class="card-img">
                       </div>
                   </div>
               </div>
@@ -269,6 +264,18 @@ export default {
   data () {
     return {
       modal: false,
+      openedProject: '',
+      projects: {
+        boolflix: { title: 'Boolflix', subtitle: 'Progetto ispirato a Netflix', description: "Progetto ispirato al famoso Netflix, costruito utilizzando esclusivamente HTML5, CSS3 e Javascript, insieme ad alcune librerie e framework (JQuery per la parte dinamica di User Interface e Owl Carousel per ottenere lo slider con l'insieme dei film/serie TV ricercati in ogni sezione). Per quanto riguarda la ricerca dei contenuti multimediali ho utilizzato le API personalizzate messe a disposizione da 'TMDB', interrogate dalle chiamate AJAX di JQuery. I risultati inoltre sono filtrabili per 'film' o per 'serie tv'.", image: "img/projects_cover/boolflix.png"},
+
+        spotify: { title: 'Spotify', subtitle: 'Progetto ispirato a Spotify', description: "Interfaccia grafica per player musicale ispirato a Spotify Web, il colosso dei servizi di musica. Qui ho utilizzato procedure avanzate di CSS3 per ottenere vari effetti visivi, come ad esempio le cards 3D. Template completamente resposive e orientato al 'mobile first'", image: "img/projects_cover/spotify.png"},
+
+        airbnb: { title: 'BoolBnB', subtitle: 'Progetto ispirato ad AirBnB', description: "Progetto realizzato partendo da zero e lavorando in team. Una complessa Applicazione Web ispirata al famoso Airbnb, completa di Backend (autenticazione in base a Ruoli, gestione di un Payment Provider, Geolocalizzazione API, Cron Job per la gestione delle sponsorizzazioni e completa di tutte le operazioni CRUD per quanto riguarda la gestione degli appartamenti) e interfaccia Frontend responsive.", image: "img/projects_cover/airbnb.png"},
+
+        whatsapp: { title: 'BoolsApp', subtitle: 'Progetto ispirato a WhatsApp Web', description: "Progetto ispirato al famoso Netflix, costruito utilizzando esclusivamente HTML5, CSS3 e Javascript, insieme ad alcune librerie e framework (JQuery per la parte dinamica di User Interface e Owl Carousel per ottenere lo slider con l'insieme dei film/serie TV ricercati in ogni sezione). Per quanto riguarda la ricerca dei contenuti multimediali ho utilizzato le API personalizzate messe a disposizione da 'TMDB', interrogate dalle chiamate AJAX di JQuery. I risultati inoltre sono filtrabili per 'film' o per 'serie tv'.", image: "img/projects_cover/boolsapp.png"},
+
+        teambit: { title: 'Teambit', subtitle: 'Progetto ispirato a Teambit', description: "Progetto ispirato al famoso Netflix, costruito utilizzando esclusivamente HTML5, CSS3 e Javascript, insieme ad alcune librerie e framework (JQuery per la parte dinamica di User Interface e Owl Carousel per ottenere lo slider con l'insieme dei film/serie TV ricercati in ogni sezione). Per quanto riguarda la ricerca dei contenuti multimediali ho utilizzato le API personalizzate messe a disposizione da 'TMDB', interrogate dalle chiamate AJAX di JQuery. I risultati inoltre sono filtrabili per 'film' o per 'serie tv'.", image: "img/projects_cover/teambit.png"},
+      },
     }
   },
   mounted () {
