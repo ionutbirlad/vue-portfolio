@@ -171,19 +171,19 @@
                   </div>
               </div>
               <div class="row">
-                  <div @click="(modal = true) && (openedProject = projects.airbnb)" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modal = true) && (openedProject = projects.airbnb)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.airbnb.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.airbnb.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="(modal = true) && (openedProject = projects.whatsapp)" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modal = true) && (openedProject = projects.whatsapp)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.whatsapp.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.whatsapp.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="(modal = true) && (openedProject = projects.teambit)" class="col mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modal = true) && (openedProject = projects.teambit)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.teambit.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.teambit.image" class="card-img">
@@ -274,7 +274,7 @@ export default {
 
         whatsapp: { title: 'BoolsApp', subtitle: 'Progetto ispirato a WhatsApp Web', description: "Interfaccia full responsive che simula il funzionamento e la gestione dei messaggi di WhatsApp Web. Insieme ad HTML5, CSS3 e Javascript ho utilizzato Jquery come framework per la gestione delle varie interazioni grafiche ed Handlebars.js come template engine per la generazione dei messaggi. Inoltre l'app consente la gestione e l'aggiunta dei propri contatti e la ricerca all'interno degli stessi.", image: "img/projects_cover/boolsapp.png"},
 
-        teambit: { title: 'Teambit', subtitle: 'Progetto ispirato a Teambit', description: "Template del sito web di Teambit, riprodotto nei minimi dettagli. Oltre ad HTML5, CSS3 e Javascript ho utilizzzato in fase di developing Webpack per la gestione della compilazione dei file SCSS e JS. Interamente responsive.", image: "img/projects_cover/teambit.png"},
+        teambit: { title: 'Teambit', subtitle: 'Progetto ispirato a Teambit', description: "Template del sito web di Teambit, riprodotto nei minimi dettagli usando esclusivamente custom CSS. Oltre ad HTML5, CSS3 e Javascript ho utilizzzato in fase di developing Webpack per la gestione della compilazione dei file SCSS e JS. Interamente responsive.", image: "img/projects_cover/teambit.png"},
       },
     }
   },
@@ -306,7 +306,7 @@ export default {
       appearOnScroll.observe(fader);
     });
 
-    // skide in effect
+    // slide in effect
     const sliders = document.querySelectorAll(".slide-in");
 
     sliders.forEach(slider => {
