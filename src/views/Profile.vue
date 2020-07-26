@@ -128,7 +128,7 @@
           </div>
         </section>
 
-        <section class="section section-lg section-shaped overflow-hidden my-0">
+        <section class="section section-lg section-shaped overflow-hidden my-0" id="progetti">
           <div class="shape shape-style-1 shape-dark shape-skew alpha-4">
               <span></span>
               <span></span>
@@ -156,7 +156,7 @@
               </template>
             </modal>
 
-              <div class="row" id="progetti">
+              <div class="row">
                   <div @click="(modal = true) && (openedProject = projects.boolflix)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.boolflix.subtitle">
                       <div class="card card-lift--hover shadow border-0">
@@ -356,6 +356,11 @@ export default {
 
 .card {
   cursor: pointer;
+}
+
+#progetti {
+  height: 794.16px;
+  padding-bottom: 0;
 }
 
 </style>
