@@ -68,7 +68,7 @@
                         <div class="mt-5 py-5 border-top text-center">
                             <div class="row justify-content-center">
                                 <div class="col-lg-9">
-                                  <p>
+                                  <p id="chisono">
                                     Sono un giovane Full Stack Web Developer con un background di formazione
                                     in ambito economico. Appassionato fin da giovanissimo di programmazione e informatica,
                                     oggi cerco di fondere le mie conoscenze e ottenere risultati implementando nuove
@@ -89,7 +89,7 @@
             <div class="row align-items-center justify-content-center">
               <h2 class="text-dark">Competenze</h2>
             </div>
-            <tabs fill class="flex-column flex-md-row mt-4">
+            <tabs fill class="flex-column flex-md-row mt-4" id="competenze">
               <card shadow>
                   <tab-pane title="Frontend">
                     <span slot="title">
@@ -156,7 +156,7 @@
               </template>
             </modal>
 
-              <div class="row">
+              <div class="row" id="progetti">
                   <div @click="(modal = true) && (openedProject = projects.boolflix)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.boolflix.subtitle">
                       <div class="card card-lift--hover shadow border-0">
@@ -198,7 +198,7 @@
             <div class="row align-items-center justify-content-center pb-3">
               <h2 class="text-dark">Formazione</h2>
             </div>
-            <div class="row">
+            <div class="row" id="formazione">
               <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
                 <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
                   <div class="card card-lift--hover shadow border-0 slide-in from-left">

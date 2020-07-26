@@ -58,29 +58,53 @@
                     <router-link to="/register" class="dropdown-item">Register</router-link>
                 </base-dropdown>
             </ul> -->
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#">
+            <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
+              <li class="nav-item" @click="scrollToElement('chisono')">
+                <a class="nav-link nav-link-icon">
                     Chi sono
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#">
+              <li class="nav-item" @click="scrollToElement('competenze')">
+                <a class="nav-link nav-link-icon">
                     Competenze
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#">
+              <li class="nav-item dropdown">
+                <!-- <a class="nav-link nav-link-icon" href="#">
                     Progetti
-                </a>
+                </a> -->
+                <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl" tag="li" title="Progetti">
+                    <div class="dropdown-menu-inner">
+                        <a @click="scrollToElement('progetti')"
+                           class="media d-flex align-items-center">
+                            <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                                <i class="ni ni-spaceship"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                                <h6 class="heading text-primary mb-md-1">Progetti Principali</h6>
+                                <p class="description d-none d-md-inline-block mb-0">Visualizza i principali progetti da me realizzati</p>
+                            </div>
+                        </a>
+                        <a href="#"
+                           class="media d-flex align-items-center">
+                            <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                                <i class="ni ni-ui-04"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                                <h5 class="heading text-warning mb-md-1">Tutti i progetti</h5>
+                                <p class="description d-none d-md-inline-block mb-0">Guarda tutti i progetti che ho prodotto</p>
+                            </div>
+                        </a>
+                    </div>
+                </base-dropdown>
               </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#">
+              <li class="nav-item" @click="scrollToElement('formazione')">
+                <a class="nav-link nav-link-icon">
                     Formazione
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#">
+              <li class="nav-item" @click="scrollToElement('contatti')">
+                <a class="nav-link nav-link-icon">
                     Contatti
                 </a>
               </li>
@@ -146,11 +170,23 @@ export default {
     BaseNav,
     CloseButton,
     BaseDropdown
-  }
+  },
+  methods: {
+    scrollToElement(id) {
+      let element_id = document.getElementById(id);
+      if (element_id) {
+        element_id.scrollIntoView({ block: "center", behavior: "smooth"});
+      }
+    }
+  },
 };
 </script>
-<style>
+<style lang="scss" scoped>
 #logo {
   height: 50px;
+}
+
+.nav-item {
+  cursor: pointer;
 }
 </style>
