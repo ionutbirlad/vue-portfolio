@@ -201,19 +201,43 @@
             <div class="row" id="formazione">
               <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
                 <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
-                  <div class="card card-lift--hover shadow border-0 slide-in from-left">
-                      <router-link to="/landing" title="Landing Page">
-                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                      </router-link>
+                  <div class="card-wrapper-left slide-in from-left">
+                    <card class="card border-0" shadow body-classes="py-5">
+                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
+                        </icon>
+                        <h6 class="text-primary text-uppercase">Download Argon</h6>
+                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
+                            that includes the most important components and features.</p>
+                        <div>
+                            <badge type="primary" rounded>design</badge>
+                            <badge type="primary" rounded>system</badge>
+                            <badge type="primary" rounded>creative</badge>
+                        </div>
+                        <base-button tag="a" href="#" type="primary" class="mt-4">
+                            Learn more
+                        </base-button>
+                    </card>
                   </div>
                 </div>
               <!-- </div> -->
               <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
                 <div class="transform-perspective-right col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
-                  <div class="card card-lift--hover shadow border-0 slide-in from-right">
-                      <router-link to="/landing" title="Landing Page">
-                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                      </router-link>
+                  <div class="card-wrapper-right slide-in from-right">
+                    <card class="card border-0" shadow body-classes="py-5">
+                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
+                        </icon>
+                        <h6 class="text-primary text-uppercase">Download Argon</h6>
+                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
+                            that includes the most important components and features.</p>
+                        <div>
+                            <badge type="primary" rounded>design</badge>
+                            <badge type="primary" rounded>system</badge>
+                            <badge type="primary" rounded>creative</badge>
+                        </div>
+                        <base-button tag="a" href="#" type="primary" class="mt-4">
+                            Learn more
+                        </base-button>
+                    </card>
                   </div>
                 </div>
               <!-- </div> -->
@@ -222,19 +246,43 @@
             <div class="row">
               <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
                 <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
-                  <div class="card card-lift--hover shadow border-0 slide-in from-left">
-                      <router-link to="/landing" title="Landing Page">
-                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                      </router-link>
+                  <div class="card-wrapper-left slide-in from-left">
+                    <card class="card border-0" shadow body-classes="py-5">
+                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
+                        </icon>
+                        <h6 class="text-primary text-uppercase">Download Argon</h6>
+                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
+                            that includes the most important components and features.</p>
+                        <div>
+                            <badge type="primary" rounded>design</badge>
+                            <badge type="primary" rounded>system</badge>
+                            <badge type="primary" rounded>creative</badge>
+                        </div>
+                        <base-button tag="a" href="#" type="primary" class="mt-4">
+                            Learn more
+                        </base-button>
+                    </card>
                   </div>
                 </div>
               <!-- </div> -->
               <!-- <div class="col-md-6 col-sm-6 mb-5 mt-4 mb-md-5 pt-3"> -->
                 <div class="transform-perspective-right col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
-                  <div class="card card-lift--hover shadow border-0 slide-in from-right">
-                      <router-link to="/landing" title="Landing Page">
-                          <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                      </router-link>
+                  <div class="card-wrapper-right slide-in from-right">
+                    <card class="card border-0" shadow body-classes="py-5">
+                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
+                        </icon>
+                        <h6 class="text-primary text-uppercase">Download Argon</h6>
+                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
+                            that includes the most important components and features.</p>
+                        <div>
+                            <badge type="primary" rounded>design</badge>
+                            <badge type="primary" rounded>system</badge>
+                            <badge type="primary" rounded>creative</badge>
+                        </div>
+                        <base-button tag="a" href="#" type="primary" class="mt-4">
+                            Learn more
+                        </base-button>
+                    </card>
                   </div>
                 </div>
               <!-- </div> -->
@@ -361,6 +409,44 @@ export default {
 #progetti {
   height: 794.16px;
   padding-bottom: 0;
+}
+
+.card-wrapper-left {
+  position: relative;
+  & > .card {
+    // background-color: none;
+    border: 1px solid #00000080 !important;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -39999999;
+    background: rgb(50,50,93);
+    background: linear-gradient(120deg, rgba(50,50,93,1) 47%, rgba(192,57,43,1) 100%);
+    transform: translate(-2%, -2%);
+    border-radius: 5px;
+  }
+}
+
+.card-wrapper-right {
+  position: relative;
+  & > .card {
+    // background-color: none;
+    border: 1px solid #00000080 !important;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -39999999;
+    background: rgb(50,50,93);
+    background: linear-gradient(120deg, rgba(50,50,93,1) 47%, rgba(192,57,43,1) 100%);
+    transform: translate(2%, -2%);
+    border-radius: 5px;
+  }
 }
 
 </style>
