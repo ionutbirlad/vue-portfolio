@@ -7,9 +7,9 @@
 
             <div class="row" slot="content-header" slot-scope="{closeMenu}">
                 <div class="col-6 collapse-brand">
-                    <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
-                        <img src="img/brand/me.png">
-                    </a>
+                    <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
+                      <img src="img/brand/me.png">
+                    </router-link>
                 </div>
                 <div class="col-6 collapse-close">
                     <close-button @click="closeMenu"></close-button>
@@ -85,8 +85,10 @@
                                 <p class="description d-none d-md-inline-block mb-0">Visualizza i principali progetti da me realizzati</p>
                             </div>
                         </a>
-                        <a href="#"
-                           class="media d-flex align-items-center">
+                        <a href="https://github.com/ionutbirlad"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="media d-flex align-items-center">
                             <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                                 <i class="ni ni-ui-04"></i>
                             </div>
@@ -103,16 +105,21 @@
                     Formazione
                 </a>
               </li>
+              <li class="nav-item" @click="scrollToElement('certificazioni')">
+                <a class="nav-link nav-link-icon">
+                    Certificazioni
+                </a>
+              </li>
               <li class="nav-item" @click="scrollToElement('contatti')">
                 <a class="nav-link nav-link-icon">
                     Contatti
                 </a>
               </li>
-              <li class="nav-item d-none d-lg-block ml-lg-4">
+              <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
                   <a href="https://www.creative-tim.com/product/vue-argon-design-system">
                    <base-button type="secondary" icon="ni ni-email-83">Contattami</base-button>
                   </a>
-              </li>
+              </li> -->
             </ul>
 
 

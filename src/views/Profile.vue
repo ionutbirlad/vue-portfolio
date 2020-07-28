@@ -42,17 +42,21 @@
 
                             <div class="col-lg-4 order-lg-1">
                                 <div class="card-profile-stats d-flex justify-content-center">
-                                    <div>
-                                        <span class="heading">22</span>
-                                        <span class="description">Friends</span>
+                                    <div class="mr-0">
+                                        <span class="heading"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
+                                        <span class="description">eat();</span>
                                     </div>
-                                    <div>
-                                        <span class="heading">10</span>
-                                        <span class="description">Photos</span>
+                                    <div class="mr-0">
+                                        <span class="heading"><i class="fa fa-bed" aria-hidden="true"></i></span>
+                                        <span class="description">sleep();</span>
                                     </div>
-                                    <div>
-                                        <span class="heading">89</span>
-                                        <span class="description">Comments</span>
+                                    <div class="mr-0">
+                                        <span class="heading"><i class="fa fa-code" aria-hidden="true"></i></span>
+                                        <span class="description">code();</span>
+                                    </div>
+                                    <div class="mr-0">
+                                        <span class="heading"><i class="fa fa-repeat" aria-hidden="true"></i></span>
+                                        <span class="description">repeat();</span>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +79,7 @@
                                     tecnologie in un'ottica macroeconomica di mercato, studiando sempre nuovi strumenti
                                     da applicare e sviluppare.
                                   </p>
-                                    <a href="#">Show more</a>
+                                    <!-- <a href="#">Show more</a> -->
                                 </div>
                             </div>
                         </div>
@@ -144,26 +148,26 @@
             </div>
 
             <!-- modal progetti -->
-            <modal :show.sync="modal">
+            <modal :show.sync="modalProgetti">
               <h6 slot="header" class="modal-title" id="modal-title-default"> {{openedProject.title}} <small class="text-muted"> {{openedProject.subtitle}} </small> </h6>
 
               {{openedProject.description}}
 
               <template slot="footer">
                   <!-- <base-button type="primary">Esplora altri progetti</base-button> -->
-                  <base-button type="link" class="ml-auto" @click="modal = false">Chiudi
+                  <base-button type="link" class="ml-auto" @click="modalProgetti = false">Chiudi
                   </base-button>
               </template>
             </modal>
 
               <div class="row">
-                  <div @click="(modal = true) && (openedProject = projects.boolflix)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modalProgetti = true) && (openedProject = projects.boolflix)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.boolflix.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.boolflix.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="(modal = true) && (openedProject = projects.spotify)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-right" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modalProgetti = true) && (openedProject = projects.spotify)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-right" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.spotify.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.spotify.image" class="card-img">
@@ -171,19 +175,19 @@
                   </div>
               </div>
               <div class="row">
-                  <div @click="(modal = true) && (openedProject = projects.airbnb)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modalProgetti = true) && (openedProject = projects.airbnb)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.airbnb.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.airbnb.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="(modal = true) && (openedProject = projects.whatsapp)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modalProgetti = true) && (openedProject = projects.whatsapp)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.whatsapp.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.whatsapp.image" class="card-img">
                       </div>
                   </div>
-                  <div @click="(modal = true) && (openedProject = projects.teambit)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
+                  <div @click="(modalProgetti = true) && (openedProject = projects.teambit)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
            :title="projects.teambit.subtitle">
                       <div class="card card-lift--hover shadow border-0">
                         <img v-lazy="projects.teambit.image" class="card-img">
@@ -203,18 +207,63 @@
                 <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
                   <div class="card-wrapper-left slide-in from-left">
                     <card class="card border-0" shadow body-classes="py-5">
-                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
-                        </icon>
-                        <h6 class="text-primary text-uppercase">Download Argon</h6>
-                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
-                            that includes the most important components and features.</p>
-                        <div>
-                            <badge type="primary" rounded>design</badge>
-                            <badge type="primary" rounded>system</badge>
-                            <badge type="primary" rounded>creative</badge>
+                        <img v-lazy="'img/brand/boolean.png'" alt="Raised circle image"
+                             class="img-fluid rounded-circle shadow-lg mb-4" style="width: 80px;">
+                        <h6 class="text-primary text-uppercase">Boolean Careers</h6>
+                        <div class="description mt-3">
+                        <p class="my-0">Corso intensivo Full Stack Web Developer a tempo pieno, con forte attività pratica sia individuale che in team.</p>
+                        <p class="mb-1">In particolare abbiamo utilizzato le seguenti tecnologie:</p>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <ul class="my-0">
+                              <li>HTML</li>
+                              <li>CSS</li>
+                              <li>Javascript ES5 / ES6</li>
+                              <li>PHP (OOP)</li>
+                              <li>Node.Js</li>
+                            </ul>
+                            <p class="mb-0">Framework Back-end:</p>
+                            <ul class="my-0">
+                              <li>Laravel</li>
+                            </ul>
+                            <p class="mb-0">Database:</p>
+                            <ul class="my-0">
+                              <li>MySql</li>
+                            </ul>
+                            <p class="mb-0">Framework Front-end:</p>
+                            <ul class="my-0">
+                              <li>JQuery</li>
+                              <li>VueJs</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-6">
+                            <p class="mb-0">CSS:</p>
+                            <ul class="my-0">
+                              <li>Puro</li>
+                              <li>SASS / SCSS</li>
+                              <li>Bootstrap 3 e 4</li>
+                            </ul>
+                            <p class="mb-0">Tools:</p>
+                            <ul class="my-0">
+                              <li>Webpack</li>
+                              <li>Chart.Js</li>
+                              <li>HandleBars</li>
+                            </ul>
+                            <p class="mb-0">Versioning Tool:</p>
+                            <ul class="my-0">
+                              <li>Git</li>
+                            </ul>
+                          </div>
+                        </div>
+                        </div>
+                        <div class="mt-3">
+                            <badge type="primary" rounded>programmazione</badge>
+                            <badge type="primary" rounded>sviluppo web</badge>
+                            <badge type="primary" rounded>frontend</badge>
+                            <badge type="primary" rounded>backend</badge>
                         </div>
                         <base-button tag="a" href="#" type="primary" class="mt-4">
-                            Learn more
+                            Scopri di più
                         </base-button>
                     </card>
                   </div>
@@ -224,19 +273,42 @@
                 <div class="transform-perspective-right col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
                   <div class="card-wrapper-right slide-in from-right">
                     <card class="card border-0" shadow body-classes="py-5">
-                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
-                        </icon>
-                        <h6 class="text-primary text-uppercase">Download Argon</h6>
-                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
-                            that includes the most important components and features.</p>
-                        <div>
-                            <badge type="primary" rounded>design</badge>
-                            <badge type="primary" rounded>system</badge>
-                            <badge type="primary" rounded>creative</badge>
-                        </div>
-                        <base-button tag="a" href="#" type="primary" class="mt-4">
-                            Learn more
-                        </base-button>
+                      <img v-lazy="'img/brand/unisi.jpg'" alt="Raised circle image"
+                           class="img-fluid rounded-circle shadow-lg mb-4" style="width: 80px;">
+                      <h6 class="text-primary text-uppercase">Università degli Studi di Siena</h6>
+                      <div class="description mt-3">
+                        <p>Laurea triennale in Scienze dell'Economia e della Gestione Aziendale
+                          Percorso formativo che approfondisce le
+                          seguenti 4 aree disciplinari:</p>
+
+                          <div class="row">
+                            <div class="col-6">
+                              <ul>
+                                <li class="mb-3">aziendale (le tecniche di rilevazione dei fenomeni aziendali e
+                                della loro traduzione in scritture contabili, l'analisi strategica
+                                dell'impresa, il marketing)</li>
+                                <li class="mb-3">economica (microeconomia, che tratta l'analisi del consumatore e dell'impresa,
+                                e macroeconomia,
+                                riguardante l'equilibrio macroeconomico e l'economia pubblica)</li>
+                              </ul>
+                            </div>
+                            <div class="col-6">
+                              <ul>
+                                <li class="mb-3">giuridica (diritto pubblico, diritto privato, diritto commerciale e diritto tributario)</li>
+                                <li class="mb-3">matematico-statistica (matematica generale, matematica finanziaria e statistica
+                                applicati alla realtà economico aziendale)</li>
+                              </ul>
+                            </div>
+                          </div>
+                      </div>
+                      <div>
+                          <badge type="primary" rounded>economia</badge>
+                          <badge type="primary" rounded>marketing</badge>
+                          <badge type="primary" rounded>informatica</badge>
+                      </div>
+                      <base-button tag="a" href="#" type="primary" class="mt-4">
+                          Scopri di più
+                      </base-button>
                     </card>
                   </div>
                 </div>
@@ -248,19 +320,20 @@
                 <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
                   <div class="card-wrapper-left slide-in from-left">
                     <card class="card border-0" shadow body-classes="py-5">
-                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
-                        </icon>
-                        <h6 class="text-primary text-uppercase">Download Argon</h6>
-                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
-                            that includes the most important components and features.</p>
-                        <div>
-                            <badge type="primary" rounded>design</badge>
-                            <badge type="primary" rounded>system</badge>
-                            <badge type="primary" rounded>creative</badge>
-                        </div>
-                        <base-button tag="a" href="#" type="primary" class="mt-4">
-                            Learn more
-                        </base-button>
+                      <img v-lazy="'img/brand/bandini.png'" alt="Raised circle image"
+                           class="img-fluid rounded-circle shadow-lg mb-4 py-2 px-2" style="width: 80px;">
+                      <h6 class="text-primary text-uppercase">Istituto Tecnico Commerciale "Sallustio Bandini" - Siena (Ragioneria)</h6>
+                      <p class="description mt-3">Diploma Tecnico Commerciale - Indirizzo Sistemi informativi aziendali <br>
+                        Percorso di specializzazione che affianca
+                        allo studio dell’amministrazione e della
+                        gestione dell’azienda.</p>
+                      <div>
+                          <badge type="primary" rounded>economia</badge>
+                          <badge type="primary" rounded>informatica</badge>
+                      </div>
+                      <base-button tag="a" href="#" type="primary" class="mt-4">
+                          Scopri di più
+                      </base-button>
                     </card>
                   </div>
                 </div>
@@ -269,19 +342,21 @@
                 <div class="transform-perspective-right col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
                   <div class="card-wrapper-right slide-in from-right">
                     <card class="card border-0" shadow body-classes="py-5">
-                        <icon name="ni ni-check-bold" type="primary" rounded class="mb-4">
-                        </icon>
-                        <h6 class="text-primary text-uppercase">Download Argon</h6>
-                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4
-                            that includes the most important components and features.</p>
-                        <div>
-                            <badge type="primary" rounded>design</badge>
-                            <badge type="primary" rounded>system</badge>
-                            <badge type="primary" rounded>creative</badge>
-                        </div>
-                        <base-button tag="a" href="#" type="primary" class="mt-4">
-                            Learn more
-                        </base-button>
+                      <img v-lazy="'img/brand/google.png'" alt="Raised circle image"
+                           class="img-fluid rounded-circle shadow-lg mb-4 py-2 px-2" style="width: 80px;">
+                      <h6 class="text-primary text-uppercase">Google Digital Trainning - Fondamenti di Marketing Digitale</h6>
+                      <p class="description mt-3">Corso creato da formatori Google e accreditato dall'Interactive Advertising Bureau,
+                                                  che tratta aspetti fondamentali del marketing digitale e analizza casi studio reali per aiutare a mettere in pratica le conoscenze acquisite.</p>
+                      <div>
+                          <badge type="primary" rounded>SEM</badge>
+                          <badge type="primary" rounded>SEO</badge>
+                          <badge type="primary" rounded>google analytics</badge>
+                          <badge type="primary" rounded>analisi dati</badge>
+                          <badge type="primary" rounded>marketing digitale</badge>
+                      </div>
+                      <base-button tag="a" href="#" type="primary" class="mt-4">
+                          Scopri di più
+                      </base-button>
                     </card>
                   </div>
                 </div>
@@ -289,6 +364,83 @@
             </div>
           </div>
         </section>
+
+        <section id="certificazioni" class="section section-lg section-nucleo-icons pt-100 pb-0">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-3">Licenze e Certificazioni</h2>
+                        <h4 class="text-muted mb-5">Clicca sul pulsante per vederle tutte!</h4>
+                        <!-- <p class="lead">
+                            Clicca sul pulsante per mostrarle tutte!
+                        </p> -->
+                        <div class="btn-wrapper">
+                           <base-button @click="showIconsAnimation = !showIconsAnimation" type="primary">Mostra</base-button>
+                        </div>
+                    </div>
+                    <!-- modal certificazioni -->
+                    <modal :show.sync="modalCertificazioni">
+                      <h6 slot="header" class="modal-title" id="modal-title-default"> {{openedCertification.title}} </h6>
+
+                      <small class="text-muted">Oraganizzazione emittente: </small> {{openedCertification.organizzazioneEmittente}} <br>
+                      <small class="text-muted">Data rilascio: </small> {{openedCertification.dataRilascio}} <br>
+                      <small class="text-muted">ID Credenziale: </small> {{openedCertification.idCredenziale}} <br>
+                      <small v-if="openedCertification.urlCredenziale" class="text-muted">Url Credenziale:
+                      </small>
+                      <a
+                      :href="openedCertification.urlCredenziale"
+                      target="_blank" rel="noopener noreferrer"
+                      > <small>{{openedCertification.urlCredenziale}}
+                      </small>
+                    </a>
+
+                      <template slot="footer">
+                          <!-- <base-button type="primary">Esplora altri progetti</base-button> -->
+                          <base-button type="link" class="ml-auto" @click="modalCertificazioni = false">Chiudi
+                          </base-button>
+                      </template>
+                    </modal>
+                </div>
+                <!-- <div class="blur--hover"> -->
+                    <!-- <a href="https://demos.creative-tim.com/argon-design-system/docs/foundation/icons.html"> -->
+                        <div class="section-nucleo-icons icons-container blur-item mt-0" :class="{'on-screen': showIconsAnimation}">
+                            <!-- Center -->
+                            <i class="icon ni ni-diamond"></i>
+                            <!-- Right 1 -->
+                            <!-- <i class="icon icon-sm ni ni-album-2"></i> -->
+                            <span></span>
+                            <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.delf)" class="icon icon-sm fa fa-language" aria-hidden="true"></i>
+                            <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.googleTraining)" class="icon icon-sm fa fa-google" aria-hidden="true"></i>
+
+                            <!-- Right 2 -->
+                            <!-- <i class="icon ni ni-bag-17"></i> -->
+                            <span></span>
+                            <!-- <i class="icon ni ni-bell-55"></i> -->
+                            <span></span>
+                            <!-- <i class="icon ni ni-credit-card"></i> -->
+                            <span></span>
+
+                            <!-- Left 1 -->
+                            <!-- <i class="icon icon-sm ni ni-briefcase-24"></i> -->
+                            <span></span>
+                            <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.cambridge)" class="icon icon-sm fa fa-language" aria-hidden="true"></i>
+                            <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.booleanCareers)" class="icon icon-sm fa fa-certificate" aria-hidden="true"></i>
+
+                            <!-- Left 2 -->
+                            <!-- <i class="icon ni ni-calendar-grid-58"></i> -->
+                            <span></span>
+                            <!-- <i class="icon ni ni-camera-compact"></i> -->
+                            <span></span>
+                            <!-- <i class="icon ni ni-chart-bar-32"></i> -->
+                            <span></span>
+
+                        </div>
+                        <!-- <span class="blur-hidden h5 text-success">Explore all the 21.000+ Nucleo Icons</span> -->
+                    <!-- </a> -->
+                <!-- </div> -->
+            </div>
+        </section>
+
     </div>
 </template>
 
@@ -298,6 +450,7 @@ import TabPane from "@/components/Tabs/TabPane.vue";
 import { VBTooltip } from "bootstrap-vue/esm/directives/tooltip/tooltip";
 import { VBPopover } from "bootstrap-vue/esm/directives/popover/popover";
 import Modal from "@/components/Modal.vue";
+import Icons from "./components/Icons";
 
 export default {
   directives: {
@@ -307,11 +460,14 @@ export default {
   components: {
     'tabs': Tabs,
     'tab-pane': TabPane,
-    Modal
+    Modal,
+    Icons
   },
   data () {
     return {
-      modal: false,
+      modalProgetti: false,
+      modalCertificazioni: false,
+      showIconsAnimation: false,
       openedProject: '',
       projects: {
         boolflix: { title: 'Boolflix', subtitle: 'Progetto ispirato a Netflix', description: "Progetto ispirato al famoso Netflix, costruito utilizzando esclusivamente HTML5, CSS3 e Javascript, insieme ad alcune librerie e framework (JQuery per la parte dinamica di User Interface e Owl Carousel per ottenere lo slider con l'insieme dei film/serie TV ricercati in ogni sezione). Per quanto riguarda la ricerca dei contenuti multimediali ho utilizzato le API personalizzate messe a disposizione da 'TMDB', interrogate dalle chiamate AJAX di JQuery. I risultati inoltre sono filtrabili per 'film' o per 'serie tv'.", image: "img/projects_cover/boolflix.png"},
@@ -323,6 +479,13 @@ export default {
         whatsapp: { title: 'BoolsApp', subtitle: 'Progetto ispirato a WhatsApp Web', description: "Interfaccia full responsive che simula il funzionamento e la gestione dei messaggi di WhatsApp Web. Insieme ad HTML5, CSS3 e Javascript ho utilizzato Jquery come framework per la gestione delle varie interazioni grafiche ed Handlebars.js come template engine per la generazione dei messaggi. Inoltre l'app consente la gestione e l'aggiunta dei propri contatti e la ricerca all'interno degli stessi.", image: "img/projects_cover/boolsapp.png"},
 
         teambit: { title: 'Teambit', subtitle: 'Progetto ispirato a Teambit', description: "Template del sito web di Teambit, riprodotto nei minimi dettagli usando esclusivamente custom CSS. Oltre ad HTML5, CSS3 e Javascript ho utilizzzato in fase di developing Webpack per la gestione della compilazione dei file SCSS e JS. Interamente responsive.", image: "img/projects_cover/teambit.png"},
+      },
+      openedCertification: '',
+      certificazioni: {
+        booleanCareers: { title: 'Corso FullStack Web Developer FullTime', organizzazioneEmittente: 'Boolean Careers', dataRilascio: 'Giugno 2020', idCredenziale: '20071656', urlCredenziale: 'https://www.credential.net/ba29f733-ef40-4c40-8f01-eb4764bfc9de#gs.95m6tt', image: "img/projects_cover/boolflix.png"},
+        googleTraining: { title: 'Google Digital Trainning - Fondamenti di Marketing Digitale', organizzazioneEmittente: 'Google', dataRilascio: 'Agosto 2019', idCredenziale: '3RA 9QQ P95'},
+        cambridge: { title: 'Certificato Cambridge Lingua Inglese', organizzazioneEmittente: 'Cambridge Assessment International Education', dataRilascio: 'Aprile 2014', idCredenziale: '0043993694'},
+        delf: { title: 'Diploma di studio lingua francese', organizzazioneEmittente: "Ministère de l'Éducation nationale et de la Jeunesse", dataRilascio: 'Novembre 2009', idCredenziale: '039055-016642'},
       },
     }
   },
@@ -447,6 +610,10 @@ export default {
     transform: translate(2%, -2%);
     border-radius: 5px;
   }
+}
+
+.icon {
+  cursor: pointer;
 }
 
 </style>
