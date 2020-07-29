@@ -29,11 +29,13 @@ export default {
   name: "base-progress",
   props: {
     striped: {
-      type: Boolean,
+      // originariamente era BOOLEANO ma dava errore in console
+      type: String,
       description: "Whether progress is striped"
     },
     animated: {
-      type: Boolean,
+      // originariamente era BOOLEANO ma dava errore in console
+      type: String,
       description:
         "Whether progress is animated (works only with `striped` prop together)"
     },
