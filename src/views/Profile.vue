@@ -90,7 +90,7 @@
   <section class="section bg-secondary mb-5">
     <div class="container container-lg">
       <div class="row align-items-center justify-content-center">
-        <h2 class="text-dark">Competenze</h2>
+        <h2 class="display-3">Competenze</h2>
       </div>
       <tabs fill class="flex-column flex-md-row mt-4" id="competenze">
         <card shadow>
@@ -143,7 +143,7 @@
     </div>
     <div class="container container-lg">
       <div class="row align-items-center justify-content-center">
-        <h2 class="text-white">Progetti principali</h2>
+        <h2 class="display-3 text-white">Progetti principali</h2>
       </div>
 
       <!-- modal progetti -->
@@ -161,32 +161,29 @@
       </modal>
 
       <div class="row">
-        <div @click="(modalProgetti = true) && (openedProject = projects.boolflix)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
-          :title="projects.boolflix.subtitle">
+        <div @click="(modalProgetti = true) && (openedProject = projects.boolflix)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-left" v-b-popover.hover.top :title="popMessage">
           <div class="card card-lift--hover shadow border-0">
             <img v-lazy="projects.boolflix.image" class="card-img">
           </div>
         </div>
-        <div @click="(modalProgetti = true) && (openedProject = projects.spotify)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-right" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'"
-          :title="projects.spotify.subtitle">
+        <div @click="(modalProgetti = true) && (openedProject = projects.spotify)" class="col col-sm-6 mb-5 mt-4 mb-md-5 pt-3 slide-in from-right" v-b-popover.hover.top :title="popMessage">
           <div class="card card-lift--hover shadow border-0">
             <img v-lazy="projects.spotify.image" class="card-img">
           </div>
         </div>
       </div>
       <div class="row">
-        <div @click="(modalProgetti = true) && (openedProject = projects.airbnb)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft="'Clicca sul progetto per maggiori informazioni'" :title="projects.airbnb.subtitle">
+        <div @click="(modalProgetti = true) && (openedProject = projects.airbnb)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topleft :title="popMessage">
           <div class="card card-lift--hover shadow border-0">
             <img v-lazy="projects.airbnb.image" class="card-img">
           </div>
         </div>
-        <div @click="(modalProgetti = true) && (openedProject = projects.whatsapp)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright="'Clicca sul progetto per maggiori informazioni'"
-          :title="projects.whatsapp.subtitle">
+        <div @click="(modalProgetti = true) && (openedProject = projects.whatsapp)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.topright :title="popMessage">
           <div class="card card-lift--hover shadow border-0">
             <img v-lazy="projects.whatsapp.image" class="card-img">
           </div>
         </div>
-        <div @click="(modalProgetti = true) && (openedProject = projects.teambit)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top="'Clicca sul progetto per maggiori informazioni'" :title="projects.teambit.subtitle">
+        <div @click="(modalProgetti = true) && (openedProject = projects.teambit)" class="col-6 col-md-4 mb-5 mt-4 mb-md-5 pt-3 fade-in" v-b-popover.hover.top :title="popMessage">
           <div class="card card-lift--hover shadow border-0">
             <img v-lazy="projects.teambit.image" class="card-img">
           </div>
@@ -198,7 +195,7 @@
   <section class="section section-lg section-shaped overflow-hidden my-0 pb-0">
     <div class="container container-lg">
       <div class="row align-items-center justify-content-center pb-3">
-        <h2 class="text-dark">Formazione</h2>
+        <h2 class="display-3">Formazione</h2>
       </div>
       <div class="row" id="formazione">
         <div class="transform-perspective-left col-md-6 col-sm-6 mb-5 mt-4 mb-md-5">
@@ -208,8 +205,8 @@
               <h6 class="text-primary text-uppercase">Boolean Careers</h6>
               <div class="description mt-3">
                 <p class="my-0">Corso intensivo Full Stack Web Developer a tempo pieno, con forte attività pratica sia individuale che in team.</p>
-                <p class="mb-1">In particolare abbiamo utilizzato le seguenti tecnologie:</p>
-                <div class="row">
+                <div class="row noOnMobile">
+                  <p class="mb-1 ml-3">In particolare abbiamo utilizzato le seguenti tecnologie:</p>
                   <div class="col-md-6">
                     <ul class="my-0">
                       <li>HTML</li>
@@ -270,22 +267,22 @@
               <img v-lazy="'img/brand/unisi.jpg'" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg mb-4" style="width: 80px;">
               <h6 class="text-primary text-uppercase">Università degli Studi di Siena</h6>
               <div class="description mt-3">
-                <p>Laurea triennale in Scienze dell'Economia e della Gestione Aziendale
-                  Percorso formativo che approfondisce le
+                <p class="siena">Laurea triennale in Scienze dell'Economia e della Gestione Aziendale.</p>
+                <div class="resizeIntermedio"></div>
+                <div class="row noOnMobile">
+                  <p class="ml-3 siena">Percorso formativo che approfondisce le
                   seguenti 4 aree disciplinari:</p>
-
-                <div class="row">
-                  <div class="col-6">
+                  <div class="col-6 px-0">
                     <ul>
                       <li class="mb-3">aziendale (le tecniche di rilevazione dei fenomeni aziendali e
                         della loro traduzione in scritture contabili, l'analisi strategica
                         dell'impresa, il marketing)</li>
-                      <li class="mb-3">economica (microeconomia, che tratta l'analisi del consumatore e dell'impresa,
+                      <li class="mb-3">economica (microeconomia, tratta l'analisi del consumatore e dell'impresa,
                         e macroeconomia,
-                        riguardante l'equilibrio macroeconomico e l'economia pubblica)</li>
+                        riguardo l'equilibrio macroeconomico e l'economia pubblica)</li>
                     </ul>
                   </div>
-                  <div class="col-6">
+                  <div class="col-6 px-0">
                     <ul>
                       <li class="mb-3">giuridica (diritto pubblico, diritto privato, diritto commerciale e diritto tributario)</li>
                       <li class="mb-3">matematico-statistica (matematica generale, matematica finanziaria e statistica
@@ -317,6 +314,7 @@
                 Percorso di specializzazione che affianca
                 allo studio dell’amministrazione e della
                 gestione dell’azienda.</p>
+                <div class="resizeIntermedio"></div>
               <div>
                 <badge type="primary" rounded>economia</badge>
                 <badge type="primary" rounded>informatica</badge>
@@ -385,16 +383,16 @@
         <i class="icon ni ni-diamond"></i>
         <!-- Right 1 -->
         <span></span>
-        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.delf)" class="icon icon-sm fa fa-language" aria-hidden="true" v-b-popover.hover.top title="Clicca per visualizzare"></i>
-        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.googleTraining)" class="icon icon-sm fa fa-google" aria-hidden="true" v-b-popover.hover.top title="Clicca per visualizzare"></i>
+        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.delf)" class="icon icon-sm fa fa-language" aria-hidden="true" v-b-popover.hover.top :title="popMessage"></i>
+        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.googleTraining)" class="icon icon-sm fa fa-google" aria-hidden="true" v-b-popover.hover.top :title="popMessage"></i>
         <!-- Right 2 -->
         <span></span>
         <span></span>
         <span></span>
         <!-- Left 1 -->
         <span></span>
-        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.cambridge)" class="icon icon-sm fa fa-language" aria-hidden="true" v-b-popover.hover.top title="Clicca per visualizzare"></i>
-        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.booleanCareers)" class="icon icon-sm fa fa-certificate" aria-hidden="true" v-b-popover.hover.top title="Clicca per visualizzare"></i>
+        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.cambridge)" class="icon icon-sm fa fa-language" aria-hidden="true" v-b-popover.hover.top :title="popMessage"></i>
+        <i @click="(modalCertificazioni = true) && (openedCertification = certificazioni.booleanCareers)" class="icon icon-sm fa fa-certificate" aria-hidden="true" v-b-popover.hover.top :title="popMessage"></i>
 
         <!-- Left 2 -->
         <span></span>
@@ -433,6 +431,8 @@ export default {
   },
   data() {
     return {
+      windowWidth: window.innerWidth,
+      popMessage: '',
       modalProgetti: false,
       modalCertificazioni: false,
       showIconsAnimation: false,
@@ -618,6 +618,13 @@ export default {
     tabPanes.forEach(fader => {
       incrementOnScroll.observe(fader);
     });
+
+    // gestione tooltip on resize
+    window.onresize = () => {
+      that.windowWidth = window.innerWidth
+      that.windowWidth <= 768 ? that.popMessage = '' : that.popMessage = 'Clicca per maggiori informazioni'
+    }
+    that.windowWidth <= 768 ? that.popMessage = '' : that.popMessage = 'Clicca per maggiori informazioni'
   }
 };
 </script>
@@ -703,5 +710,27 @@ export default {
 
 .icon {
   cursor: pointer;
+}
+
+// .resizeIntermedio {
+//   height: 38px;
+// }
+
+@media screen and (max-width: 991px) {
+  .noOnMobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .resizeIntermedio {
+    height: 49px;
+  }
+}
+
+@media screen and (min-width: 991px) and (max-width: 1150px) {
+  p.siena {
+    font-size: 0.9rem;
+  }
 }
 </style>
